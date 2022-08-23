@@ -1,0 +1,15 @@
+body {
+    margin: 0 auto;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    max-width: 1000px;
+}
+
+.box {
+    border: 2px solid rgb(0, 0, 0);
+    padding: 50px 40px;
+}
