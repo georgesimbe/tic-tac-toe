@@ -2,7 +2,7 @@
 Tic Tac Toe Game
 Tic Tac Toe Game created a simple JS Tic Tac Toe
 
-## :computer: [Click here](#) to see my live project!
+## :computer: [Click here](https://georgesimbe.github.io/tic-tac-toe/) to see my live project!
 
 ## :page_facing_up: About
 - Click on the link above to see my project 
