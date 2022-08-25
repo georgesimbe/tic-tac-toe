@@ -20,15 +20,50 @@ h1 {
     text-align: center;
 }
 
+.dashBoard {
+    display: flex;
+    justify-content: center;
+}
+
 .game-Buttons {
     display: flex;
     justify-content: center;
+}
+
+.scoreTracker {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-evenly;
+
+}
+
+/* .score {
+    display: inline;
+    margin: auto;
+} */
+
+.statTable {
+    max-width: 50%;
+    margin: auto;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.resultBorder {
+    border: 2px solid rgb(0, 0, 0);
+    padding: 50px 40px;
+
 }
 
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 
 footer div {

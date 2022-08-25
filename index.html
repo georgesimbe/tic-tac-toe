@@ -13,6 +13,7 @@
     <header>
         <H1>TIC TAC TOE</H1>
     </header>
+    <div class="dashBoard">hello</div>
     <div class="board">
         <div class="box A1"></div>
         <div class="box A2"></div>
@@ -24,20 +25,52 @@
         <div class="box C2"></div>
         <div class="box C3"></div>
     </div>
+
     <div class="game-Buttons">
-        <button>Restart</button>
-        <button>Stop</button>
+        <button class="restart">Restart</button>
+        <button class="endGame">Stop</button>
     </div>
-    <div class="ScoreTracker"></div>
-    <footer>
-        <div>
-            <p>About me! </p>
+
+    <div class="results">
+        <H1>Results</H1>
+
+        <div class="statTable">
+            <table style="width:100%">
+                <tr>
+                    <th>Player</th>
+                    <th>Name</th>
+                    <th>Wins</th>
+                    <th>Loss</th>
+                    <th>Draw</th>
+
+                </tr>
+                <tr>
+                    <td>Player1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Player2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
         </div>
-        <div>
-            <span> &copy; Simbe Development 2022</span>
-        </div>
-    </footer>
-    <script type="module" src="/index.js"></script>
+
+        <footer>
+            <div>
+                <p>About me! </p>
+            </div>
+            <div>
+                <span> &copy; Simbe Development 2022</span>
+            </div>
+        </footer>
+        <script type="module" src="/index.js"></script>
 </body>
 
 </html>
