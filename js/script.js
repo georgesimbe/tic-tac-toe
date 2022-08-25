@@ -4,8 +4,8 @@ let turn = true;
 function game(board) {
   for (let i = 0; i < board.length; i++) {
     board[i].addEventListener('click', (event) => {
-      if (winner(board, turn ? 'player1' : 'player2')) {
-        i = board.length
+      if (!board[i].getAttribute("style") == null || board[i].getAttribute("style") == "") {
+        console.log('Square is already taken')
       } else if (board[i].getAttribute("style") == null || board[i].getAttribute("style") == "") {
         if (turn) {
           event.target.classList.add('player1')
@@ -16,13 +16,30 @@ function game(board) {
           event.target.style.backgroundColor = 'green'
           turn = true
         }
-      } else if (!board[i].getAttribute("style") == null || board[i].getAttribute("style") == "") {
-        console.log('Square is already taken')
+        if (winner(board, turn ? 'player1' : 'player2')) {
+          i = board.length
+        }
+        // // if (counter == 9) {
+        // //   return 'Draw'
+        // // }
+
       }
     })
+    
   }
-}
+    let counter = 0
+    // // draw
+        let draw = false;
+        for (let i = 0; i < board.length; i++) {
+          if (board[i].classList.contains(turn ? 'player1' : 'player2')) {
+            draw = null
+          } else if (!board[i].classList.contains(turn ? 'player1' : 'player2')) {
+            draw = false
+          }
+        }
+        // console.log(draw)
 
+}
 function winner(board, player) {
   // row 1
   if (board[0].classList.contains(player) && board[1].classList.contains(player) && board[2].classList.contains(player)) {
@@ -63,22 +80,9 @@ function winner(board, player) {
   else if (board[2].classList.contains(player) && board[4].classList.contains(player) && board[6].classList.contains(player)) {
     console.log(player + ' Wins')
     return true
-  } else {
-    // draw
-    let counter = 0
-    for (let i = 0; i < board.length; i++) {
-      if (board[i].classList.contains(player)) {
-        if (counter === 9) {
-          console.log('Draw')
-          return null
-        } else if (!board[i].classList.contains(player)) {
-          return false
-        }
-        counter++
-      }
-    }
   }
 }
+
 game(board)
 
 
