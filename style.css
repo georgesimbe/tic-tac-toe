@@ -1,9 +1,11 @@
 body {
     margin: 0 auto;
+    background-color: #000500;
+    color: white;
 }
 
 .board {
-    margin: 70px auto 10px auto;
+    margin: 50px auto 10px auto;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%;
@@ -11,7 +13,7 @@ body {
 }
 
 .box {
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid white;
     padding: 50px 40px;
 }
 
@@ -50,11 +52,11 @@ h1 {
 table,
 th,
 td {
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .resultBorder {
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid white;
     padding: 50px 40px;
 
 }
@@ -68,4 +70,35 @@ footer {
 
 footer div {
     padding: 0 5px;
+}
+
+.A1,
+.A2,
+.A3 {
+    border-top: none;
+}
+
+.A1,
+.B1,
+.C1 {
+    border-left: none;
+}
+
+.C1,
+.C2,
+.C3 {
+    border-bottom: none;
+}
+
+.A3,
+.B3,
+.C3 {
+    border-right: none;
+}
+
+button {
+    border: 2px solid white;
+    background-color: #000500;
+    color: white;
+    padding: 10px;
 }
