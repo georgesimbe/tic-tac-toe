@@ -50,14 +50,24 @@ function endGame() {
   document.querySelectorAll('td')[1].textContent = ""
   document.querySelectorAll('td')[2].textContent = 0
   document.querySelectorAll('td')[3].textContent = 0
-  document.querySelectorAll('td')[4].textContent = 0
+  // document.querySelectorAll('td')[4].textContent = 0
 
-  document.querySelectorAll('td')[6].textContent = ""
+  // document.querySelectorAll('td')[6].textContent = ""
+  document.querySelectorAll('td')[5].textContent = 0
+  document.querySelectorAll('td')[6].textContent = 0
   document.querySelectorAll('td')[7].textContent = 0
-  document.querySelectorAll('td')[8].textContent = 0
-  document.querySelectorAll('td')[9].textContent = 0
   player1 = {}
   player2 = {}
+
+
+  // document.querySelectorAll('td')[1].textContent = player1.wins
+  // document.querySelectorAll('td')[2].textContent = player1.loss
+  // document.querySelectorAll('td')[3].textContent = player1.draw
+
+  // // document.querySelectorAll('td')[6].textContent = player2.name
+  // document.querySelectorAll('td')[5].textContent = player2.wins
+  // document.querySelectorAll('td')[6].textContent = player2.loss
+  // document.querySelectorAll('td')[7].textContent = player2.draw
 }
 
 function game(board) {
@@ -76,8 +86,10 @@ function game(board) {
           event.target.style.backgroundRepeat = "no-repeat";
           counter++
           if (winner(board, turn ? player1.playerStatus : player2.playerStatus)) {
+          } else {
+            turn = false
           }
-          turn = false
+
         } else {
           event.target.classList.add(player2.playerStatus)
           event.target.style.backgroundImage = "url('icons8-o-100.png')";
@@ -85,8 +97,10 @@ function game(board) {
           counter++
           // console.log(counter)
           if (winner(board, turn ? player1.playerStatus : player2.playerStatus)) {
+          } else {
+            turn = true
           }
-          turn = true
+
         }
         if (counter == 9) {
           draw()
