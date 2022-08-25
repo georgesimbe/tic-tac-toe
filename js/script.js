@@ -16,42 +16,59 @@ class players {
 let player1 = new players('X', 'John', 'player1', 'red', 0, 0, 0)
 let player2 = new players('O', 'Smith', 'player2', 'green', 0, 0, 0)
 
+// Rename Function name
 function game(board) {
   for (let i = 0; i < board.length; i++) {
     board[i].addEventListener('click', (event) => {
       if (!board[i].getAttribute('style') == null || board[i].getAttribute('style') == "") {
         console.log('Square is already taken')
-      } else if (board[i].getAttribute('style') == null || board[i].getAttribute('style') == "") {
+      }
+      else if (board[i].getAttribute('style') == null || board[i].getAttribute('style') == "") {
         if (turn) {
           event.target.classList.add(player1.playerStatus)
           event.target.style.backgroundColor = player1.color
+          if (winner(board, turn ? player1.playerStatus : player2.playerStatus)) {
+            endgame()
+          }
           turn = false
         } else {
           event.target.classList.add(player2.playerStatus)
           event.target.style.backgroundColor = player2.color
+          if (winner(board, turn ? player1.playerStatus : player2.playerStatus)) {
+            endgame()
+          }
           turn = true
         }
-        if (winner(board, turn ? player1.playerStatus : player2.playerStatus)) {
-          i = board.length
-        }
-
       }
     })
-
   }
-  let counter = 0
-  // // draw
-  let draw = false;
-  for (let i = 0; i < board.length; i++) {
-    if (board[i].classList.contains(turn ? player1.playerStatus : player2.playerStatus)) {
-      draw = null
-    } else if (!board[i].classList.contains(turn ? player1.playerStatus : player2.playerStatus)) {
-      draw = false
-    }
-  }
-  // console.log(draw)
-
 }
+
+function endgame() {
+  console.log('Game end')
+}
+
+
+// // draw for game logic
+// let draw = false;
+// for (let i = 0; i < board.length; i++) {
+//   if (board[i].classList.contains(turn ? player1.playerStatus : player2.playerStatus)) {
+//     draw = null
+//   } else if (!board[i].classList.contains(turn ? player1.playerStatus : player2.playerStatus)) {
+//     draw = false
+//   }
+// }
+
+// function draw(board, player) {
+//   for (let i = 0; i < board.length; i++) {
+//     if (board[i].style.backgroundColor != player1.color && board[i].style.backgroundColor != player2.color) {
+//       return false
+//     }
+//   }
+//   return true
+// }
+
+
 function winner(board, player) {
   // row 1
   if (board[0].classList.contains(player) && board[1].classList.contains(player) && board[2].classList.contains(player)) {
