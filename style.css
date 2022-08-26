@@ -22,6 +22,11 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
 .dashBoard {
     display: flex;
     justify-content: center;
@@ -101,4 +106,9 @@ button {
     background-color: #000500;
     color: white;
     padding: 10px;
+}
+
+.dashBoard {
+    font-size: 20px;
+    font-weight: bold;
 }
