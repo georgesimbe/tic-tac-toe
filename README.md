@@ -1,3 +1,4 @@
+## :computer: [Click here](https://georgesimbe.github.io/tic-tac-toe/) to see my live project!
 # ❌ Tic-tac-toe⭕
 Created a simple JS Tic Tac Toe
 
